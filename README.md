@@ -3,7 +3,7 @@
 Monetize your Flutter apps with CPX Research Surveys – a clean, production-ready integration built using GetX state management and MVVM (LayerX) architecture.
 
 This project demonstrates how to seamlessly integrate the CPX Research SDK Flutter
-package into your apps, allowing users to participate in paid surveys and earn virtual currency, rewards, or credits in real-time.
+ package into your apps, allowing users to participate in paid surveys and earn virtual currency, rewards, or credits in real-time.
 
 🚀 Features
 
@@ -23,23 +23,23 @@ Logging & Debugging with CPXLogger
 
 🏗️ Project Structure
 lib/
-└── app/
-├── service/
-│    └── survey_service.dart     # Handles SDK interactions
-├── controller/
-│    └── survey_controller.dart # GetX logic & state
-└── view/
-└── survey_view.dart       # UI - simple tap to open surveys
+ └── app/
+     ├── service/
+     │    └── survey_service.dart     # Handles SDK interactions
+     ├── controller/
+     │    └── survey_controller.dart # GetX logic & state
+     └── view/
+          └── survey_view.dart       # UI - simple tap to open surveys
 
 📦 Installation
 
 Add the CPX Research SDK Flutter dependency:
 
 dependencies:
-cpx_research_sdk_flutter:
-git:
-url: https://github.com/MakeOpinionGmbH/cpx-research-SDK-Flutter.git
-path: cpx_research_sdk_flutter
+  cpx_research_sdk_flutter:
+    git: 
+      url: https://github.com/MakeOpinionGmbH/cpx-research-SDK-Flutter.git
+      path: cpx_research_sdk_flutter
 
 
 Then install packages:
@@ -52,9 +52,9 @@ flutter pub get
 Encapsulates SDK methods like opening surveys, fetching data, marking transactions, and enabling logs.
 
 SurveyService().showSurveyBrowser(
-appId: "<YourAppId>",
-userId: "user_123",
-context: context,
+  appId: "<YourAppId>",
+  userId: "user_123",
+  context: context,
 );
 
 2. Controller – survey_controller.dart
@@ -68,8 +68,8 @@ controller.openSurvey(context);
 Minimal UI layer → single button that launches CPX surveys.
 
 ElevatedButton(
-onPressed: () => controller.openSurvey(context),
-child: const Text("Open Survey"),
+  onPressed: () => controller.openSurvey(context),
+  child: const Text("Open Survey"),
 ),
 
 📱 Example Flow
@@ -91,15 +91,15 @@ Add the following permissions in AndroidManifest.xml:
 
 🎯 Roadmap
 
-Base integration with CPX SDK
+ Base integration with CPX SDK
 
-Service-Controller-View clean separation
+ Service-Controller-View clean separation
 
-Add wallet integration (virtual coins, in-app rewards)
+ Add wallet integration (virtual coins, in-app rewards)
 
-Advanced UI with Survey Cards and Notification-style Widgets
+ Advanced UI with Survey Cards and Notification-style Widgets
 
-API integration for survey rewards backend
+ API integration for survey rewards backend
 
 📸 Preview
 
