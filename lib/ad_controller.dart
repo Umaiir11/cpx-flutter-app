@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -13,10 +14,13 @@ class AdController extends GetxController {
     <html>
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+        body { margin:0; padding:0; overflow:hidden; }
+      </style>
     </head>
-    <body style="margin:0;padding:0;overflow:hidden;">
-      <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
-      <ins class="eas6a97888e10" data-zoneid="5720054"></ins>
+    <body>
+      <script async type="application/javascript" src="https://a.pemsrv.com/ad-provider.js"></script>
+      <ins class="eas6a97888e33" data-zoneid="5712106"></ins>
       <script>
         (AdProvider = window.AdProvider || []).push({"serve": {}});
       </script>
@@ -26,6 +30,7 @@ class AdController extends GetxController {
 
     webViewController = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(const Color(0x00000000))
       ..loadHtmlString(adHtml);
   }
 }

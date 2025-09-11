@@ -22,6 +22,8 @@ class MyApp extends StatelessWidget {
 
 
 
+
+
 class AdView extends StatelessWidget {
   const AdView({super.key});
 
@@ -30,24 +32,34 @@ class AdView extends StatelessWidget {
     final controller = Get.put(AdController());
 
     return Scaffold(
-      appBar: AppBar(title: const Text("ExoClick Banner Ad")),
+      appBar: AppBar(title: const Text("Interstitial Ad Test")),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
             Get.dialog(
               Dialog(
-                insetPadding: const EdgeInsets.all(16),
-                child: SizedBox(
-                  height: 300, // Banner zone fits inside
-                  width: 320,
-                  child: WebViewWidget(
-                    controller: controller.webViewController,
+                insetPadding: EdgeInsets.zero,
+                backgroundColor: Colors.black,
+                child: SizedBox.expand(
+                  child: Stack(
+                    children: [
+                      WebViewWidget(controller: controller.webViewController),
+                      Positioned(
+                        top: 40,
+                        right: 20,
+                        child: IconButton(
+                          icon: const Icon(Icons.close, color: Colors.white, size: 28),
+                          onPressed: () => Get.back(),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
+              barrierDismissible: false,
             );
           },
-          child: const Text("Show Banner Ad"),
+          child: const Text("Show Interstitial Ad"),
         ),
       ),
     );
